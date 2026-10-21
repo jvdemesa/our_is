@@ -1,0 +1,54 @@
+# Secrets and environment configuration
+.env
+.env.*
+!.env.example
+application/config/secrets/
+assets/credentials/
+*.pem
+*.key
+*service-account*.json
+
+# Local databases and database exports
+*.sql
+*.sql.gz
+*.sqlite
+*.sqlite3
+*.db
+*.dump
+
+# Logs and temporary files
+application/logs/*
+!application/logs/index.html
+application/cache/*
+!application/cache/index.html
+*.log
+*.tmp
+
+# Uploaded or user-generated files
+uploads/
+application/uploads/
+
+# Dependencies and generated assets
+vendor/
+node_modules/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local database credentials
+/application/config/database.php
+
+# Local CodeIgniter configuration
+/application/config/config.php
+
+# Google OAuth tokens and client credentials
+/token.json
+/assets/token/
+ /application/config/client_id.json
+# Google OAuth credentials and tokens
+/token.json
+/assets/token/
+/application/config/client_id.json

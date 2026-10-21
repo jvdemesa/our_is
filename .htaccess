@@ -1,0 +1,24 @@
+#RewriteEngine on
+#RewriteCond $1 !^(index\.php|uploads|css|js|lib|img|bootstrap|robots\.txt)
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+# index file can be index.php, home.php, default.php etc.
+DirectoryIndex index.php
+
+# Rewrite engine
+RewriteEngine On
+
+#php config
+php_value max_input_vars 3000
+php_value suhosin.get.max_vars 3000
+php_value suhosin.post.max_vars 3000
+php_value suhosin.request.max_vars 3000
+
+
+# condition with escaping special chars
+RewriteCond $1 !^(index\.php|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ ./index.php/$1 [L,QSA]
+
+Options -Indexes
